@@ -4299,3 +4299,27 @@ async function importAssetsFromZip() {
     };
     input.click();
 }
+
+
+/* ================= 角色卡v2 (cunchu) 全屏模态控制 ================= */
+window.openCharacterV2Modal = function(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    if (e && e.preventDefault) e.preventDefault();
+    if (typeof toggleSidebar === 'function') toggleSidebar();
+
+    const container = document.getElementById('characterV2IframeContainer');
+    const frame = document.getElementById('characterV2Frame');
+    if (container && frame) {
+        if (frame.src === 'about:blank' || !frame.src || frame.src.endsWith('about:blank')) {
+            frame.src = 'https://cunchu.vercel.app/'; // 默认挂载 cunchu 站点
+        }
+        container.style.display = 'flex';
+    }
+};
+
+window.closeCharacterV2Modal = function() {
+    const container = document.getElementById('characterV2IframeContainer');
+    if (container) {
+        container.style.display = 'none';
+    }
+};
