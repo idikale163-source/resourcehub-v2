@@ -4311,7 +4311,7 @@ window.openCharacterV2Modal = function(e) {
     const frame = document.getElementById('characterV2Frame');
     if (container && frame) {
         if (frame.src === 'about:blank' || !frame.src || frame.src.endsWith('about:blank')) {
-            frame.src = 'https://cunchu.vercel.app/'; // 默认挂载 cunchu 站点
+            frame.src = 'tools/character-v2/index.html'; // 默认挂载 cunchu 站点
         }
         container.style.display = 'flex';
     }
